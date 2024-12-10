@@ -1,0 +1,67 @@
+html, body, #app{
+  height: 100%;
+  margin: 0px;
+}
+
+:root
+{
+  --background-light: #ffffff;
+  --background-secondary-light: #e3e3e3d7;
+  --text-light: #000000;
+  --primary-accent-light: #007bff;
+  --secondary-accent-light: #6c757d;
+  --border-light: #e0e0e0;
+
+  --background-dark: #121212;
+  --background-secondary-dark: #303030;
+  --text-dark: #ffffff;
+  --primary-accent-dark: #1e90ff;
+  --secondary-accent-dark: #bbbbbb;
+  --border-dark: #333333;
+
+  --background: var(--background-light);
+  --background-secondary: var(--background-secondary-light);
+  --text: var(--text-light);
+  --primary-accent: var(--primary-accent-light);
+  --secondary-accent: var(--secondary-accent-light);
+  --border: var(--border-light);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: var(--text);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+button > span::before {
+  font-size: 20px;
+}
+
+
+button > span:hover {
+  opacity: 0.8;
+}
+
+.icon-button {
+  align-self: flex-end;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* font-size: 25px; */
+  /* border: 1px solid var(--border); */
+  background-color: var(--background);
+  padding: 10px;
+  border-radius: 5px;
+}

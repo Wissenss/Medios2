@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebLibrary</title>
+
+  <!-- bootstrap icons -->
+  <!-- link last update: 2024 08 04 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- vue framework -->
+  <!-- link last update: 2024 08 05 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- vue router -->
+  <!-- link last update: 2024 08 12 -->
+  <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
+
+  <!-- asyncronous indexedDB wrappers -->
+  <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
+
+  <!-- theme style -->
+  <link rel="stylesheet" href="theme.css"></link>
+
+  <!-- homePage styles -->
+   <link rel="stylesheet" href="homePage/homePage.css">
+
+</head>
+<body>
+  <div id="app">
+
+  </div>
+
+  <!-- database -->
+   <script src="database.js"></script>
+
+  <!-- import app -->
+  <script src="./main.js"></script>
+
+  <!-- import components -->
+  <script src="homePage/homePage.js"></script>
+
+  <!-- import router -->
+  <script src="./router.js"></script>
+
+  <!-- mount app -->
+  <script>
+    request.onsuccess = async function () {
+
+      console.log("IndexedDB open correctely")
+
+      DATABASE = await idb.openDB("WebLibrary", 1)
+
+      //DATABASE = request.result;
+
+      const mountedApp = app.use(router).mount('#app');
+
+      LIGHT_MODE = localStorage.getItem("ligthMode") === 'true';
+
+      //DATABASE.objectStoreNames()
+    }
+    
+    // setTheme(LIGHT_MODE);
+  </script>
+
+</body>
+</html>
